@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<center>
+<h1 class="title">Your Ticket</h1>
+<div class="ticket">
+    <div class="ticket-left">
+        <h2>{{ data.flight_name }}</h2>
+
+        <div class="route">
+            <span class="city">{{ data.flight_from }}</span>
+            <span class="plane">✈</span>
+            <span class="city">{{ data.flight_to }}</span>
+        </div>
+
+        <div class="details">
+            <p><strong>Date:</strong> {{ data.date }}</p>
+            <p><strong>Duration:</strong> {{ data.flight_timming }} hrs</p>
+            <p><strong>Class:</strong> {{ data.seat_class }}</p>
+        </div>
+
+        <div class="passenger">
+            <p><strong>Name:</strong> {{ data.user_name }}</p>
+            <p><strong>Seat:</strong> {{ data.seat_number }}</p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="ticket-right">
+        <p class="price">₹{{ data.ticket_price }}</p>
+        <p>ID: {{ data.id }}</p>
+    </div>
+
+</div>
+</center>
+
+{% endblock %}

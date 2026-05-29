@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<center>
+    <h1> Enter the details Below</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Check Flight Details</h2>
+        <label>Flight Name : </label>
+        <input type="text" name='flight_name' value='{{ flight.flight_name }}'> <br><br>
+
+        <label>From : </label>
+        <input type="text" name='flight_source' value='{{ flight.flight_source }}'> <br><br>
+
+        <label>To : </label>
+        <input type="text" name='flight_dest' value='{{ flight.flight_dest }}'> <br><br>
+
+        <label>Timmings : </label>
+        <input type="text" name='flight_timming' value='{{ flight.flight_timming }}'> <br><br>
+
+        <label>Price</label>
+        <input type="text" name='ticket_price' value='{{ flight.ticket_price }}'> <br><br>
+
+        <label>Travel Date : </label>
+        <input type="text" name='date' value='{{ flight.date }}'> <br><br>
+
+        <h2>Enter Your Details</h2>
+
+        <label> Enter Your Name : </label>
+        <input type="text" name='user_name' value='{{ flight.user_name}}'> <br><br>
+        
+        <label> Enter Your Age : </label>
+        <input type="text" name='user_age' value='{{ flight.user_age}}'> <br><br>
+        
+        <label> Enter Your Phone Number : </label>
+        <input type="number" name='user_phone' value='{{ flight.user_phone}}'> <br><br>
+        
+        <label> Enter Your email : </label>
+        <input type="text" name='user_email' value='{{ flight.user_email}}'> <br><br>
+        
+        <label> Enter Your Class : </label>
+        <input type="text" name='seat_class' value='{{ flight.seat_class}}'> <br><br>
+        
+        <label> Enter Your Seat Number : </label>
+        <input type="text" name='seat_number' value='{{ flight.seat_number}}'> <br><br>
+
+
+        <button type="submit"> Save Changes </button> <br><br><br><br><br>
+    </form>
+</center>
+
+{% endblock %}

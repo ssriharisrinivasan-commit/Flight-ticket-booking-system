@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<center>
+    <h1 class="title">Your Bookings...</h1>
+
+    {% for i in data %}
+    <div class="booking-card">
+        <h2>{{ i.flight_name }}</h2>
+
+        <p class="route">{{ i.flight_source }} → {{ i.flight_dest }}</p>
+        <p class="price">₹{{ i.ticket_price }}</p>
+        <p class="date">{{ i.date }}</p>
+
+        <div class="actions">
+            <a href="{% url 'tupdate' i.id %}">Update Booking</a>
+            <a href="{% url 'tdelete' i.id %}">Cancel Booking</a>
+            <a href="{% url 'viewticket' i.id %}">View Ticket</a>
+        </div>
+
+
+    </div>
+    {% endfor %}
+</center>
+{% endblock %}

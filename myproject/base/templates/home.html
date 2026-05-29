@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Available flights</h1>
+
+<center>
+    {% for i in data %}
+        <div class="card">
+            <h2>{{ i.flight_name }}</h2>
+
+            <p class="route">{{ i.flight_source }} → {{ i.flight_dest }}</p>
+            <p>Duration: {{ i.flight_timming }} hours</p>
+            <p class="price">₹{{ i.ticket_price }}</p>
+            <p><strong>Date:</strong> {{ i.date }}</p>
+
+        <a href="{% url 'ticketbooking' i.id %}" class="btn">Book Now</a> <br><br><br><br><br>
+    </div>
+    {% endfor %} 
+</center>
+{% endblock %}
